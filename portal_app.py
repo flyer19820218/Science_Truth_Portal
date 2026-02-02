@@ -70,7 +70,7 @@ with col1:
     st.markdown("## ⚛️ 理化")
     st.markdown("#### 【珍珠莫耳實驗室】")
     st.write("精準掌控每一顆原子的質量。")
-    st.link_button("🔥 啟動理化實驗室", "https://shalu-science-physics.streamlit.app/")
+    st.link_button("🔥 啟動理化實驗室", "https://science-ai-lab-bbbvhmgpodx4qssgdhpxoi.streamlit.app/")
     st.markdown('</div>', unsafe_allow_html=True)
 
 with col2:
@@ -78,7 +78,7 @@ with col2:
     st.markdown("## 🧬 生物")
     st.markdown("#### 【生命真理研究室】")
     st.write("從顯微鏡解讀生存的禁忌。")
-    st.link_button("🍀 啟動生命研究室", "https://shalu-science-biology.streamlit.app/")
+    st.link_button("🍀 啟動生命研究室", "https://aibiologylab-ws7gxsja64fym3fpvq5lpu.streamlit.app/")
     st.markdown('</div>', unsafe_allow_html=True)
 
 with col3:
@@ -86,7 +86,7 @@ with col3:
     st.markdown("## 🪐 地科")
     st.markdown("#### 【星艦導航指揮室】")
     st.write("跟隨馬斯克衝向星辰大海。")
-    st.link_button("🚀 啟動星艦導航室", "https://shalu-science-earth.streamlit.app/")
+    st.link_button("🚀 啟動星艦導航室", "https://aiearthsciencelab-yvpfgocxyuwgqfowtcvfpi.streamlit.app/")
     st.markdown('</div>', unsafe_allow_html=True)
 
 st.divider()
