@@ -6,13 +6,29 @@ st.set_page_config(page_title="考前 30 天：科學真理指揮中心", layout
 
 st.markdown("""
     <style>
-    /* 全黑翩翩體鎖定 */
+    /* 1. 強制背景鎖定為白色 (白晝協議) */
+    .stApp, [data-testid="stAppViewContainer"], [data-testid="stHeader"], [data-testid="stToolbar"] {
+        background-color: #ffffff !important;
+    }
+
+    /* 2. 鎖定全黑翩翩體 (確保文字不因背景變色而消失) */
     html, body, [class*="css"], .stMarkdown, p, h1, h2, h3, span, label, li {
         color: #000000 !important;
-        font-family: 'HanziPen SC', '翩翩體', 'KaiTi', sans-serif !important;
+        font-family: 'HanziPen SC', '翩翩體', 'PingFang TC', 'Heiti TC', 'Microsoft JhengHei', sans-serif !important;
     }
-    
-    /* 標題自適應 */
+
+    /* 3. 容器 (框框) 強化對位 */
+    [data-testid="stVerticalBlockBorderWrapper"] {
+        background-color: #ffffff !important;
+        border: 3px solid #000000 !important;
+        border-radius: 20px !important;
+    }
+
+    /* 4. LaTeX 公式顏色鎖定 */
+    .katex {
+        color: #000000 !important;
+    }
+
     .main-title {
         font-size: calc(1.5rem + 2vw) !important;
         text-align: center;
@@ -20,28 +36,6 @@ st.markdown("""
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         font-weight: bold;
-    }
-
-    /* 針對所有裝置的大按鈕設計 */
-    .stButton>button {
-        width: 100% !important;
-        height: 3.8rem !important;
-        font-size: 1.3rem !important;
-        font-weight: bold !important;
-        border-radius: 15px !important;
-        border: 3px solid #000000 !important;
-        transition: 0.2s;
-    }
-    .stButton>button:hover {
-        background-color: #fffde7 !important;
-        transform: scale(1.02);
-    }
-
-    /* 容器邊框強化 */
-    [data-testid="stVerticalBlockBorderWrapper"] {
-        border: 3px solid #000000 !important;
-        border-radius: 20px !important;
-        background-color: #ffffff !important;
     }
     </style>
     """, unsafe_allow_html=True)
