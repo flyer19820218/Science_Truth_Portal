@@ -1,7 +1,7 @@
 import streamlit as st
 from PIL import Image
 
-# --- 1. 頁面配置 (全黑翩翩體、專業指揮艙風格) ---
+# --- 1. 頁面配置 (全黑翩翩體、全黑文字、專業指揮艙風格) ---
 st.set_page_config(page_title="考前 30 天：科學真理指揮中心", layout="wide")
 
 st.markdown("""
@@ -12,7 +12,7 @@ st.markdown("""
     }
     .subject-card {
         background-color: #ffffff;
-        padding: 30px;
+        padding: 25px;
         border-radius: 20px;
         border: 4px solid #000000;
         text-align: center;
@@ -23,6 +23,13 @@ st.markdown("""
         transform: translateY(-10px);
         background-color: #fffde7;
         box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+    .formula-box {
+        background-color: #f1f8e9;
+        padding: 10px;
+        border-radius: 10px;
+        margin: 10px 0;
+        border: 1px dashed #2e7d32;
     }
     .main-title {
         font-size: 3.5rem !important;
@@ -45,49 +52,52 @@ st.markdown("""
 # --- 2. 標題與靈魂背景圖 ---
 st.markdown('<h1 class="main-title">🚀 考前 30 天：科學真理指揮中心 🚀</h1>', unsafe_allow_html=True)
 
-# 顯示 Q 版師生圖
 try:
     img = Image.open("data/portal_bg.jpg")
     st.image(img, use_column_width=True)
 except:
-    st.error("📸 數據溢位：找不到 data/portal_bg.jpg，請檢查資料夾路徑。")
-
-# --- 3. 指揮官寄語 ---
-st.markdown(f"""
-### 📣 首席工程師（老師）的戰前叮嚀：
-各位同學，最後 30 天不是要你們去死背，是要你們學會掌控規則。
-理化的莫耳數公式 $$n = \\frac{{m}}{{M}}$$ 就像手搖飲的珍珠，只要掌握質量與分子量的關係，
-考卷上的難題就會像去冰微糖一樣好吞！
-""")
+    st.error("📸 數據溢位：找不到 data/portal_bg.jpg，請檢查 GitHub 檔案路徑。")
 
 st.divider()
 
-# --- 4. 三大科入口選單 (時空門) ---
+# --- 3. 三大科入口選單 (真理啟示卡 + 精確網址對位) ---
 col1, col2, col3 = st.columns(3)
 
 with col1:
     st.markdown('<div class="subject-card">', unsafe_allow_html=True)
     st.markdown("## ⚛️ 理化")
-    st.markdown("#### 【珍珠莫耳實驗室】")
-    st.write("精準掌控每一顆原子的質量。")
+    st.markdown('<div class="formula-box">', unsafe_allow_html=True)
+    st.latex(r"n = \frac{m}{M}")
+    st.markdown('</div>', unsafe_allow_html=True)
+    st.write("**【珍珠莫耳定律】**")
+    st.write("想知道這杯珍奶有多少珍珠？秤出總質量 $m$，除以單顆珍珠的分子量 $M$ 就對了！")
+    # --- 填入您的理化網址 ---
     st.link_button("🔥 啟動理化實驗室", "https://science-ai-lab-bbbvhmgpodx4qssgdhpxoi.streamlit.app/")
     st.markdown('</div>', unsafe_allow_html=True)
 
 with col2:
     st.markdown('<div class="subject-card">', unsafe_allow_html=True)
     st.markdown("## 🧬 生物")
-    st.markdown("#### 【生命真理研究室】")
-    st.write("從顯微鏡解讀生存的禁忌。")
+    st.markdown('<div class="formula-box">', unsafe_allow_html=True)
+    st.latex(r"6CO_2 + 6H_2O \xrightarrow{光} C_6H_{12}O_6 + 6O_2")
+    st.markdown('</div>', unsafe_allow_html=True)
+    st.write("**【光合作用能量工廠】**")
+    st.write("吸入二氧化碳，配上陽光，植物就能為你調製出一杯熱騰騰的葡萄糖能量飲！")
+    # --- 填入您的生物網址 ---
     st.link_button("🍀 啟動生命研究室", "https://aibiologylab-ws7gxsja64fym3fpvq5lpu.streamlit.app/")
     st.markdown('</div>', unsafe_allow_html=True)
 
 with col3:
     st.markdown('<div class="subject-card">', unsafe_allow_html=True)
     st.markdown("## 🪐 地科")
-    st.markdown("#### 【星艦導航指揮室】")
-    st.write("跟隨馬斯克衝向星辰大海。")
+    st.markdown('<div class="formula-box">', unsafe_allow_html=True)
+    st.latex(r"E = 10^{4.8 + 1.5M}")
+    st.markdown('</div>', unsafe_allow_html=True)
+    st.write("**【板塊震盪能量契約】**")
+    st.write("當板塊大口喝下能量，地震規模 $M$ 增加 1，釋放能量 $E$ 可是會暴增 32 倍！")
+    # --- 填入您的地科網址 ---
     st.link_button("🚀 啟動星艦導航室", "https://aiearthsciencelab-yvpfgocxyuwgqfowtcvfpi.streamlit.app/")
     st.markdown('</div>', unsafe_allow_html=True)
 
 st.divider()
-st.caption("© 2026 科學真理補完計畫 | 指揮官：資深理化老師與 AI 助教團")
+st.info("💡 提醒：進站後請先備好 API 通行證，即可啟動 AI 助教進行圖文導讀。")
