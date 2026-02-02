@@ -1,30 +1,47 @@
 import streamlit as st
 from PIL import Image
 
-# --- 1. 頁面配置 (全能適配版) ---
+# --- 1. 頁面配置 (全能適配 + 強制白晝協議) ---
 st.set_page_config(page_title="考前 30 天：科學真理指揮中心", layout="wide")
 
 st.markdown("""
     <style>
-    /* 1. 強制背景鎖定為白色 (白晝協議) */
+    /* 1. 強制全域背景鎖定為白色 */
     .stApp, [data-testid="stAppViewContainer"], [data-testid="stHeader"], [data-testid="stToolbar"] {
         background-color: #ffffff !important;
     }
 
-    /* 2. 鎖定全黑翩翩體 (確保文字不因背景變色而消失) */
+    /* 2. 鎖定全黑翩翩體 */
     html, body, [class*="css"], .stMarkdown, p, h1, h2, h3, span, label, li {
         color: #000000 !important;
         font-family: 'HanziPen SC', '翩翩體', 'PingFang TC', 'Heiti TC', 'Microsoft JhengHei', sans-serif !important;
     }
 
-    /* 3. 容器 (框框) 強化對位 */
+    /* 3. 按鈕防黑修正：強制按鈕在任何模式下均為白底黑字 */
+    div.stButton > button, div.stLinkButton > a {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        border: 3px solid #000000 !important;
+        border-radius: 15px !important;
+        font-weight: bold !important;
+        opacity: 1 !important;
+    }
+    
+    /* 懸停時微黃感，增加互動回饋 */
+    div.stButton > button:hover, div.stLinkButton > a:hover {
+        background-color: #fffde7 !important;
+        color: #000000 !important;
+        border: 3px solid #000000 !important;
+    }
+
+    /* 4. 容器 (框框) 強化對位 */
     [data-testid="stVerticalBlockBorderWrapper"] {
         background-color: #ffffff !important;
         border: 3px solid #000000 !important;
         border-radius: 20px !important;
     }
 
-    /* 4. LaTeX 公式顏色鎖定 */
+    /* 5. LaTeX 公式顏色鎖定 */
     .katex {
         color: #000000 !important;
     }
